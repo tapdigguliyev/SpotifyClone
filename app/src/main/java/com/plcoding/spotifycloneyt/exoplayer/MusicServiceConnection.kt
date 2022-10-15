@@ -14,7 +14,7 @@ import com.plcoding.spotifycloneyt.other.Event
 import com.plcoding.spotifycloneyt.other.Resource
 
 class MusicServiceConnection(
-    private val context: Context
+    context: Context
 ) {
 
     private val _isConnected = MutableLiveData<Event<Resource<Boolean>>>()
