@@ -1,4 +1,4 @@
-package com.plcoding.spotifycloneyt.exoplayer
+package com.plcoding.spotifycloneyt.exoplayer.extensions
 
 import android.support.v4.media.MediaMetadataCompat
 import com.plcoding.spotifycloneyt.data.entities.Song

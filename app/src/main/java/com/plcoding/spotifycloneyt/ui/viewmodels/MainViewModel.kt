@@ -8,9 +8,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.plcoding.spotifycloneyt.data.entities.Song
 import com.plcoding.spotifycloneyt.exoplayer.MusicServiceConnection
-import com.plcoding.spotifycloneyt.exoplayer.isPlayEnabled
-import com.plcoding.spotifycloneyt.exoplayer.isPlaying
-import com.plcoding.spotifycloneyt.exoplayer.isPrepared
+import com.plcoding.spotifycloneyt.exoplayer.extensions.isPlayEnabled
+import com.plcoding.spotifycloneyt.exoplayer.extensions.isPlaying
+import com.plcoding.spotifycloneyt.exoplayer.extensions.isPrepared
 import com.plcoding.spotifycloneyt.other.Constants.MEDIA_ROOT_ID
 import com.plcoding.spotifycloneyt.other.Resource
 

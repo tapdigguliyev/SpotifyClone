@@ -11,8 +11,8 @@ import com.plcoding.spotifycloneyt.R
 import com.plcoding.spotifycloneyt.adapters.SwipeSongAdapter
 import com.plcoding.spotifycloneyt.data.entities.Song
 import com.plcoding.spotifycloneyt.databinding.ActivityMainBinding
-import com.plcoding.spotifycloneyt.exoplayer.isPlaying
-import com.plcoding.spotifycloneyt.exoplayer.toSong
+import com.plcoding.spotifycloneyt.exoplayer.extensions.isPlaying
+import com.plcoding.spotifycloneyt.exoplayer.extensions.toSong
 import com.plcoding.spotifycloneyt.other.Status.*
 import com.plcoding.spotifycloneyt.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
