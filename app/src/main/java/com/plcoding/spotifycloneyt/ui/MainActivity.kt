@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.RequestManager
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +18,7 @@ import com.plcoding.spotifycloneyt.exoplayer.extensions.toSong
 import com.plcoding.spotifycloneyt.other.Status.*
 import com.plcoding.spotifycloneyt.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -49,6 +52,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        swipeSongAdapter.setItemClickListener {
+            navHostFragment.findNavController().navigate(
+                R.id.globalActionToSongFragment
+            )
+        }
+
+        navHostFragment.findNavController().addOnDestinationChangedListener { _, destination, _ ->
+            when(destination.id) {
+                R.id.homeFragment -> showBottomBar()
+                R.id.songFragment -> hideBottomBar()
+                else -> showBottomBar()
+            }
+        }
 
         binding.ivPlayPause.setOnClickListener {
             curPlayingSong?.let {
@@ -120,5 +137,17 @@ class MainActivity : AppCompatActivity() {
             binding.vpSong.currentItem = newItemIndex
             curPlayingSong = song
         }
+    }
+
+    private fun hideBottomBar() {
+        binding.ivCurSongImage.isVisible = false
+        binding.vpSong.isVisible = false
+        binding.ivPlayPause.isVisible = false
+    }
+
+    private fun showBottomBar() {
+        binding.ivCurSongImage.isVisible = true
+        binding.vpSong.isVisible = true
+        binding.ivPlayPause.isVisible = true
     }
 }
