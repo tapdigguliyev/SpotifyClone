@@ -11,7 +11,7 @@ class MusicDatabase {
 
     suspend fun getAllSongs(): List<Song> {
         return try {
-            songCollection.get().await().toObjects(Song::class.java)
+            songCollection.get().await().toObjects(Song::class.java).sortedBy { it.mediaId.toInt() }
         } catch (e: Exception) {
             emptyList()
         }
