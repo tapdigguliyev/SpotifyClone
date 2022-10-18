@@ -140,14 +140,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideBottomBar() {
-        binding.ivCurSongImage.isVisible = false
-        binding.vpSong.isVisible = false
-        binding.ivPlayPause.isVisible = false
+        binding.viewPagerContainer.isVisible = false
     }
 
     private fun showBottomBar() {
-        binding.ivCurSongImage.isVisible = true
-        binding.vpSong.isVisible = true
-        binding.ivPlayPause.isVisible = true
+        binding.viewPagerContainer.isVisible = true
     }
 }
